@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IIIT NAGPUR</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <form
+      id="application-form"
+      action="https://formbold.com/s/6Qdjv"
+      method="POST"
+      enctype="multipart/form-data"
+    ></form>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <i class="fas fa-building"></i>
+        <h1>IIIT NAGPUR HOSTEL MANAGEMENT</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" class="active" id="home-link">Home</a></li>
+          <li><a href="#" id="submit-query-link">Submit Query</a></li>
+          <li><a href="#" id="track-query-link">Track Query</a></li>
+          <li><a href="#" id="admin-link">Admin Portal</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="active-section">
+        <div class="hero">
+          <h2>Welcome to Hostel Query Management System</h2>
+          <p>
+            A platform for hostel residents to submit and track their queries
+          </p>
+          <div class="cta-buttons">
+            <button id="new-query-btn" class="btn primary-btn">
+              Submit New Query
+            </button>
+            <button id="check-status-btn" class="btn secondary-btn">
+              Check Query Status
+            </button>
+          </div>
+        </div>
+
+        <div class="info-cards">
+          <div class="card">
+            <i class="fas fa-clipboard-list"></i>
+            <h3>Submit Queries</h3>
+            <p>
+              Submit your hostel-related issues or requests easily through our
+              platform
+            </p>
+          </div>
+          <div class="card">
+            <i class="fas fa-search"></i>
+            <h3>Track Status</h3>
+            <p>Track the status of your submitted queries in real-time</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-check-circle"></i>
+            <h3>Quick Resolution</h3>
+            <p>Get your issues resolved quickly by the hostel authorities</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Submit Query Section -->
+      <section id="submit-query" class="hidden-section">
+        <h2>Submit a New Query</h2>
+        <form id="query-form">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Student Email Id</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              title="Please enter a valid Gmail address"
+            />
+          </div>
+          <!-- <div>
+            <label for="btid">Enter your BT ID: </label>
+            <input type="text" id="name" name="name" required />
+          </div> -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="hostel-type">Hostel Type</label>
+              <select id="hostel-type" name="hostel-type" required>
+                <option value="">Select Hostel Type</option>
+                <option value="boys">Boys Hostel</option>
+                <option value="girls">Girls Hostel</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="room-number">Room Number</label>
+              <input type="text" id="room-number" name="room-number" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="query-type">Query Type</label>
+            <select id="query-type" name="query-type" required>
+              <option value="">Select Query Type</option>
+              <option value="maintenance">Maintenance Issue</option>
+              <option value="facility">Facility Request</option>
+              <option value="complaint">Complaint</option>
+              <option value="mess">Mess/Food Issue</option>
+              <option value="suggestion">Suggestion</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="query-subject">Subject</label>
+            <input
+              type="text"
+              id="query-subject"
+              name="query-subject"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="query-description">Description</label>
+            <textarea
+              id="query-description"
+              name="query-description"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="query-image">Attach Image (Optional)</label>
+            <input
+              type="file"
+              id="query-image"
+              name="query-image"
+              accept="image/*"
+            />
+          </div>
+          <div class="form-buttons">
+            <button type="submit" class="btn primary-btn">Submit Query</button>
+            <button type="reset" class="btn secondary-btn">Reset Form</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Track Query Section -->
+      <section id="track-query" class="hidden-section">
+        <h2>Track Your Query</h2>
+        <div class="search-container">
+          <div class="form-group">
+            <label for="query-id">Enter Query ID</label>
+            <div class="search-input">
+              <input
+                type="text"
+                id="query-id"
+                name="query-id"
+                placeholder="e.g., QRY12345"
+              />
+              <button id="search-query-btn" class="btn primary-btn">
+                Track
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="query-email">Or Enter Your Gmail</label>
+            <div class="search-input">
+              <input
+                type="email"
+                id="query-email"
+                name="query-email"
+                placeholder="your.email@gmail.com"
+              />
+              <button id="search-email-btn" class="btn primary-btn">
+                Find All Queries
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="query-results" class="hidden">
+          <h3>Query Results</h3>
+          <div class="query-list">
+            <!-- Query results will be displayed here -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Admin Portal Section -->
+      <section id="admin-portal" class="hidden-section">
+        <div id="admin-login" class="active-admin-section">
+          <h2>Admin Login</h2>
+          <form id="admin-login-form">
+            <div class="form-group">
+              <label for="admin-username">Username</label>
+              <input
+                type="text"
+                id="admin-username"
+                name="admin-username"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="admin-password">Password</label>
+              <input
+                type="password"
+                id="admin-password"
+                name="admin-password"
+                required
+              />
+            </div>
+            <div class="form-buttons">
+              <button type="submit" class="btn primary-btn">Login</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="admin-dashboard" class="hidden-admin-section">
+          <div class="admin-header">
+            <h2>Admin Dashboard</h2>
+            <button id="admin-logout-btn" class="btn secondary-btn">
+              Logout
+            </button>
+          </div>
+
+          <div class="dashboard-stats">
+            <div class="stat-card">
+              <h3>Total Queries</h3>
+              <p id="total-queries">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Ongoing</h3>
+              <p id="ongoing-queries">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Successful</h3>
+              <p id="successful-queries">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Denied</h3>
+              <p id="denied-queries">0</p>
+            </div>
+          </div>
+
+          <div class="query-filter">
+            <h3>Filter Queries</h3>
+            <div class="filter-options">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+              <button class="filter-btn" data-filter="successful">
+                Successful
+              </button>
+              <button class="filter-btn" data-filter="denied">Denied</button>
+            </div>
+          </div>
+
+          <div class="admin-query-list">
+            <table id="admin-queries-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Date</th>
+                  <th>Name</th>
+                  <th>Hostel</th>
+                  <th>Room</th>
+                  <th>Subject</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Query data will be populated here -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Query Details Modal -->
+      <div id="query-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-modal">&times;</span>
+          <h2>Query Details</h2>
+          <div id="query-details-content">
+            <!-- Query details will be displayed here -->
+          </div>
+          <div id="admin-actions" class="hidden">
+            <h3>Update Status</h3>
+            <div class="status-buttons">
+              <button class="status-btn ongoing-btn" data-status="ongoing">
+                Mark as Ongoing
+              </button>
+              <button
+                class="status-btn successful-btn"
+                data-status="successful"
+              >
+                Mark as Successful
+              </button>
+              <button class="status-btn denied-btn" data-status="denied">
+                Mark as Denied
+              </button>
+            </div>
+            <div class="form-group">
+              <label for="admin-comment">Add Comment</label>
+              <textarea id="admin-comment" rows="3"></textarea>
+            </div>
+            <button id="update-status-btn" class="btn primary-btn">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Notification -->
+      <div id="notification" class="notification">
+        <div class="notification-content">
+          <i class="fas fa-check-circle"></i>
+          <p id="notification-message"></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>IIIT NAGPUR Query Management System</h3>
+          <p>A highly effecient way to convey and solve out problems.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Submit Query</a></li>
+            <li><a href="#">Track Query</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p><i class="fas fa-envelope"></i> support@hostelquery.com</p>
+          <p><i class="fas fa-phone"></i> +91 1234567890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Hostel Query Management System. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
